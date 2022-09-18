@@ -1,0 +1,32 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+/*spacing of logo*/
+header{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 26px 56px; 
+}
+/*make logo and sign-in button line-up*/
+.logo{
+    display:block;
+}
+
+/*adding font*/
+body{
+    font-family: Helvetica, arial, sans-serif;
+    background-color: black;
+    background-image: url(./Images/backgroundC.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+}
+
+/*resize logo*/
+img{
+    height:37px;
+}
+
