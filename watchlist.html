@@ -218,6 +218,43 @@
                 </div>
               </div>
             <!--Card Ends-->
+
+<div id="moviesAvailable">
+  <h1>Favourite Movies</h1>
+  <p id="output"></p>
+  <ul >
+    <li id="movies" v-for="x in movies ">{{x}}</li>
+  </ul>
+</div>
+            <!--movie LIST STARTS-->
+            <script>
+            const moviesAvailable = new Vue({
+              el: '#moviesAvailable',
+              data: {
+                movies:[
+                  {title:'Made of Honor'},
+                  {title: 'Pitch Perfect'},
+                  {title: 'Pitch Perfect 2'},
+                  {title: 'Brooklyn 99'},
+                  {title:'Selling Sunset'},
+                  {title:'Miss Congeniality'},
+                  {title:'Hot Rod'},
+                  {title:'Just Go With It'},
+                  {title: 'What Happens in Vegas'},
+                  {title:'Love, Rosie'},
+                  {title:'The Proposal'},
+                  {title:'New Girl'},
+
+                ]
+              }
+            }).mount("movies");
+
+            document.getElementById("output").innerHTML=
+            moviesAvailable.$data.movies;
+            </script>
+
+
+            <!--MOVIE LIST ENDS-->
           </div>
         </div>
       </div>
