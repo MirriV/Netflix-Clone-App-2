@@ -261,10 +261,25 @@
 
           document.getElementById("output").innerHTML =
             moviesAvailable.$data.movies;
+
+       
         </script>
-
-
         <!--MOVIE LIST ENDS-->
+        <!--SORTIN-->
+        <div id="sort-bar">
+          <select name="sortBy" id="select" v-model="sortBy">
+            <option value="alphabetically">Alphabetically</option>
+          </select>
+          <button v-on:click="ascending = !ascending" class="sort-button">
+            <i v-if="ascending" class="fa fa-sort-up"></i>
+            <i v-else class="fa fa-sort-down"></i>
+            <input type="number" v-model="maxCookingTime" id="cooking-time-input"></input>
+    <input type="text" v-model="searchValue" placeholder="Search Recipe" id="search-input"></input>
+    <i class="fa fa-search"></i>
+          </button>
+        </div>
+
+        
       </div>
     </div>
   </div>
