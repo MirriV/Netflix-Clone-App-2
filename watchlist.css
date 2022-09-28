@@ -41,5 +41,18 @@ h1{
     overflow: hidden;
     display: flex;
     align-self: center;
+    
    }
    
+/*FAVOURITE LIST*/
+.list li {
+    cursor: pointer;
+  }
+  .list li:hover:after,
+  .list li.fav:after {
+    content: ' \2661';
+    color: red;
+  }
+  .list li.fav:hover:after {
+    content: ' \2661';
+  }

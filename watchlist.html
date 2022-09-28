@@ -17,6 +17,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
     crossorigin="anonymous"></script>
+    
 
 </head>
 
@@ -342,16 +343,56 @@
           document.getElementById("output").innerHTML =
             moviesAvailable.$data.movies;
 
-
-
-
-
-
         </script>
         <!--MOVIE LIST ENDS-->
+<!--ADDING MOVIE/SERIES TO FAVOURITES LIST BEGINS -->
+<ul class="list">
+  <li id="madeofHonor">Made of Honor</li>
+  <li id="pitchPerfect">Pitch Perfect</li>
+  <li id="cupcakes">Pitch Perfect 2</li>
+  <li id="icecream">Brooklyn 99</li>
+  <li id="cookies">Miss Congeniality</li>
+  <li id="chocolate">Selling Sunset</li>
+  <li id="pancakes">Made of Honor</li>
+  <li id="donuts">Pitch Perfect</li>
+  <li id="cupcakes">Pitch Perfect 2</li>
+  <li id="icecream">Brooklyn 99</li>
+  <li id="cookies">Miss Congeniality</li>
+  <li id="chocolate">Selling Sunset</li>
+</ul>
+
+<script>
+  // get favorites from local storage or empty array
+var favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+// add class 'fav' to each favorite
+favorites.forEach(function(favorite) {
+  document.getElementById(favorite).className = 'fav';
+});
+// register click event listener
+document.querySelector('.list').addEventListener('click', function(e) {
+  var id = e.target.id,
+      item = e.target,
+      index = favorites.indexOf(id);
+  // return if target doesn't have an id (shouldn't happen)
+  if (!id) return;
+  // item is not favorite
+  if (index == -1) {
+    favorites.push(id);
+    item.className = 'fav';
+  // item is already favorite
+  } else {
+    favorites.splice(index, 1);
+    item.className = '';
+  }
+  // store array in local storage
+  localStorage.setItem('favorites', JSON.stringify(favorites));
+});
+
+// local storage stores strings so we use JSON to stringify for storage and parse to get out of storage
+</script>
 
 
-
+<!--FAVOURITE LIST ENDS-->
       </div>
     </div>
   </div>
