@@ -14,3 +14,4 @@ The movies added to the watch list will remain in place even once the user has c
 
 This app is the final project of my Front End Frameworks course being done through Codespace Academy. 
 
+ 
