@@ -67,11 +67,11 @@
       </div>
     <!--V-SHOW-->
     <div id="app">
-      <div v-show="showText">
-        <p>User 1</p>
+      <div v-show="showText" >
+        <p style="color:white;">User 1</p>
       </div>
-      <div v-show="!showText">
-        <p>User 2</p>
+      <div v-show="!showText" >
+        <p style="color:white;">User 2</p>
       </div>
       <button v-on:click="showText = !showText">Swop Users</button>
     </div>
@@ -329,7 +329,7 @@
             el: "#people",
             data: {
               people: [
-                { name: "Made of Honor", category: "Movie" },
+                { name: "Made of Honor", category: "Movie", img:'Images\pitchPerfect2.jpg'},
                 { name: "Pitch Perfect", category: "Movie" },
                 { name: "Pitch Perfect 2", category: "Movie" },
                 { name: "Brooklyn 99", category: "Series" },
