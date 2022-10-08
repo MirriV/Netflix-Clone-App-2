@@ -7,15 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Netflix</title>
     <link rel="stylesheet" href="./signin.css">
+    <link rel="stylesheet" href="./thumbs.css">
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <script src="./signin.js"></script>
 </head>
 
 <body>
 <header>   
-    <div class="logo">
-        <img src="./Images/Netflix_2015_logo.svg">
-    </div>
+   
     <script>
         function validateform() {
             var name = document.myform.name.value;
@@ -30,11 +29,8 @@
             }
         }  
     </script>
-</header>     
-
-    <body>
-        
-        <form name="myform" method="post" action="./watchlist.html"
+<div class="container">
+    <form name="myform" method="post" action="./watchlist.html"
             onsubmit="return validateform()">
             Name: <input type="text" name="name"><br />
             Password: <input type="password" name="password"><br />
@@ -42,6 +38,91 @@
             <button v-on:click="register">Submit</button>
 
         </form>
+        <div class="logo">
+            <img src="./Images/Netflix_2015_logo.svg">
+        </div>
+
+        <div class="mySlides">
+            <div class="numbertext"></div>
+            <img src="" style="width:100%; height:10%; background-position:center; background-repeat: no-repeat;
+            background-size:cover;">  
+        </div>
+
+        <div class="mySlides">
+            <div class="numbertext"></div>
+            <img src="" style="width:100%; height:10%; background-position:center; background-repeat: no-repeat;
+            background-size:cover;">  
+        </div>
+
+        <div class="mySlides">
+            <div class="numbertext"></div>
+            <img src="" style="width:100%; height:10%; background-position:center; background-repeat: no-repeat;
+            background-size:cover;">  
+        </div>
+
+        <div class="mySlides">
+            <div class="numbertext"></div>
+            <img src="" style="width:100%; height:10%; background-position:center; background-repeat: no-repeat;
+            background-size:cover;">  
+        </div>
+
+        <div class="caption-container">
+            <p id="caption"></p>
+        </div>
+
+        <div class="row">
+            <div class="column">
+                <img class="demo cursor" src="./Images/Thumbnails/proposal.jpg" style="width:100%" onclick="currentSlide(1)" alt="movie 1">
+            </div>
+
+            <div class="column">
+                <img class="demo cursor" src="./Images/Thumbnails/SHANG-CHI-AND-THE-LEGEND-OF-THE-TEN-RINGS-movie-2021.jpeg" style="width:100%" onclick="currentSlide(2)" alt="movie 2">
+            </div>
+
+            <div class="column">
+                <img class="demo cursor" src="./Images/Thumbnails/theGreatestFight.avif" style="width:100%" onclick="currentSlide(3)" alt="movie 3">
+            </div>
+
+            <div class="column">
+                <img class="demo cursor" src="./Images/Thumbnails/uncharted-movie-thumbnail-v2.png" style="width:100%" onclick="currentSlide(4)" alt="movie 4">
+            </div>
+        </div>
+
+</div>
+
+</header>     
+
+    <body>
+        <script>
+            let slideIndex=1;
+            showSlides(slideIndex);
+
+            function plusSlides(n){
+                showSlides(slideIndex=n);
+            }
+
+            function showSlides(n){
+                let i;
+                let slides =document.getElementsByClassName("mySlides");
+                let dots =document.getElementsByClassName("demo");
+                let captionText =document.getElementById("caption");
+                if( n> slides.length) {slideIndex=1}
+                if(n<1) {slideIndex=slides.length}
+                for (i=0; i<slides.length; i++) {
+                    slides[i].style.display="none";
+                }
+                for (i=0; i<dots.length; i++) {
+                    dots[i].className=dots[i].className.replace("active", "");
+                }
+                slides[slideIndex-1].style.display="block";
+                dots[slideIndex-1].className+= "active";
+                captionText.innerHTML= dots[slideIndex-1].alt;
+
+            }
+
+
+        </script>
+        
     </body>
 
 </html>
