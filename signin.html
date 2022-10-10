@@ -12,6 +12,14 @@
     <script src="./signin.js"></script>
 </head>
 
+<div id="app">
+  
+    <div v-bind:style="passwordText">
+      New User? SignUp
+  </div>
+
+</div>
+
 <body>
 <header>   
    
@@ -30,63 +38,92 @@
         }  
     </script>
 <div class="container">
-    <form name="myform" method="post" action="./watchlist.html"
-            onsubmit="return validateform()">
-            Name: <input type="text" name="name"><br />
-            Password: <input type="password" name="password"><br />
-            <!--<input type="submit" value="register">-->
-            <button v-on:click="register">Submit</button>
+    <form name="myform" method="post" action="./watchlist.html" onsubmit="return validateform()">
+        Name: <input type="text" name="name"><br />
+        Password: <input type="password" name="password"><br />
+        <!--<input type="submit" value="register">-->
+        <button v-on:click="register">Submit</button>
 
-        </form>
-        <div class="logo">
-            <img src="./Images/Netflix_2015_logo.svg">
-        </div>
+    </form>
 
-        <div class="mySlides">
-            <div class="numbertext"></div>
-            <img src="" style="width:100%; height:10%; background-position:center; background-repeat: no-repeat;
-            background-size:cover;">  
-        </div>
+    <script>
+        var vm= new Vue({
+            el:'#app',
+            data: {
+                passwordText: {
+                    color:'red',
+                    fontSize: '20px',
+                    textAlign: 'right'
+                }
+            },
+            beforeCreate: function(){
+                alert("“Hello from before Create. I can’t do much right now’”");
+            }
+        });
 
-        <div class="mySlides">
-            <div class="numbertext"></div>
-            <img src="" style="width:100%; height:10%; background-position:center; background-repeat: no-repeat;
-            background-size:cover;">  
-        </div>
+    </script>
+    <div class="logo">
+        <img src="./Images/Netflix_2015_logo.svg">
+    </div>
 
-        <div class="mySlides">
-            <div class="numbertext"></div>
-            <img src="" style="width:100%; height:10%; background-position:center; background-repeat: no-repeat;
-            background-size:cover;">  
-        </div>
+            
+<div class="mySlides">
+    <div class="numbertext"></div>
+    <img src="./Images/whatHappensinVegas.jpg" style="width:100%; height: 10%; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;"  >
+  </div>
 
-        <div class="mySlides">
-            <div class="numbertext"></div>
-            <img src="" style="width:100%; height:10%; background-position:center; background-repeat: no-repeat;
-            background-size:cover;">  
-        </div>
+  <div class="mySlides">
+    <div class="numbertext"></div>
+    <img src="./Images/theProposal.jpg" style="width:100%; height: 10%;
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-size: cover;" >
+  </div>
 
-        <div class="caption-container">
-            <p id="caption"></p>
-        </div>
+  <div class="mySlides">
+    <div class="numbertext"></div>
+    <img src="./Images/newGirl.jpg" style="width:100%; height: 10%;
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-size: cover;" >
+    
+  </div>
+    
+  <div class="mySlides">
+    <div class="numbertext"></div>
+    <img src="./Images/hotRod.jpg" style="width:100%; height: 10%;
+    background-position: center; 
+    background-repeat: no-repeat; 
+    background-size: cover;" 
+     >
+  </div>
 
-        <div class="row">
-            <div class="column">
-                <img class="demo cursor" src="./Images/Thumbnails/proposal.jpg" style="width:100%" onclick="currentSlide(1)" alt="movie 1">
-            </div>
+  
 
-            <div class="column">
-                <img class="demo cursor" src="./Images/Thumbnails/SHANG-CHI-AND-THE-LEGEND-OF-THE-TEN-RINGS-movie-2021.jpeg" style="width:100%" onclick="currentSlide(2)" alt="movie 2">
-            </div>
+  <div class="caption-container">
+    <p id="caption"></p>
+  </div>
 
-            <div class="column">
-                <img class="demo cursor" src="./Images/Thumbnails/theGreatestFight.avif" style="width:100%" onclick="currentSlide(3)" alt="movie 3">
-            </div>
-
-            <div class="column">
-                <img class="demo cursor" src="./Images/Thumbnails/uncharted-movie-thumbnail-v2.png" style="width:100%" onclick="currentSlide(4)" alt="movie 4">
-            </div>
-        </div>
+  <div class="row">
+    <div class="column">
+      <img class="demo cursor" src="./Images/Thumbnails/avatar.png" style="width:100%" onclick="currentSlide(1)" alt="movie 1">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="./Images/Thumbnails/avatar.png" style="width:100%" onclick="currentSlide(2)" alt="movie 2">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="./Images/Thumbnails/avatar.png" style="width:100%" onclick="currentSlide(3)" alt="movie 3">
+    </div>
+    <div class="column">
+      <img class="demo cursor" src="./Images/Thumbnails/avatar.png" style="width:100%" onclick="currentSlide(4)" alt="movie 4">
+    </div>
+       
+   
+  </div>
+</div>
 
 </div>
 
@@ -99,6 +136,10 @@
 
             function plusSlides(n){
                 showSlides(slideIndex=n);
+            }
+
+            function currentSlide(n) {
+              showSlides(slideIndex = n);
             }
 
             function showSlides(n){

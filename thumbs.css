@@ -1,65 +1,70 @@
 body {
-    font-family:Arial;
-    margin:0;
-    height:100%
-}
-
-* {
+    font-family: Arial;
+    margin: 0;
+    height: 100%;
+  }
+  
+  * {
     box-sizing: border-box;
-}
-
-img{
+  }
+  
+  img {
     vertical-align: middle;
-}
+  }
+  
+  /* Position the image container (needed to position the left and right arrows) */
+  .container {
+    position: relative;
 
-.container{
-    position:relative;
-
-    background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("");
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("");
     height: 10%;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-}
-
-.mySlides{
+  
+  }
+  
+  /* Hide the images by default */
+  .mySlides {
     display: none;
-}
-
-.cursor{
+  }
+  
+  /* Add a pointer when hovering over the thumbnail images */
+  .cursor {
     cursor: pointer;
-
-}
-
-.prev:hover,
-.next:hover{
-    background-color: rgba(0,0,0,0.8);
-
-}
-
-.numbertext{
-    color:#f2f2f2;
-    font-size:12px;
+  }
+  
+  /* On hover, add a black background color with a little bit see-through */
+  .prev:hover,
+  .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  
+  /* Number text (1/3 etc) */
+  .numbertext {
+    color: #f2f2f2;
+    font-size: 12px;
     padding: 8px 12px;
     position: absolute;
-    top:0;
-}
-
-.caption-container{
+    top: 0;
+  }
+  
+  /* Container for image text */
+  .caption-container {
     text-align: center;
-    background-color:#222;
+    background-color: #222;
     padding: 2px 16px;
     color: white;
-}
-
-.row:after{
+  }
+  
+  .row:after {
     content: "";
     display: table;
     clear: both;
-}
-
-/* Six columns side by side */
-.column {
+  }
+  
+  /* Six columns side by side */
+  .column {
     float: left;
     width: 16.66%;
   }
