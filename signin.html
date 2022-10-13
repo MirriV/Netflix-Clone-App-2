@@ -45,7 +45,7 @@
         <button v-on:click="register">Submit</button>
 
     </form>
-
+<!--Life cycle hooks-->
     <script>
         var vm= new Vue({
             el:'#app',
@@ -57,7 +57,7 @@
                 }
             },
             beforeCreate: function(){
-                alert("“Hello from before Create. I can’t do much right now’”");
+                alert("“Hello from before Create. Lifecycle hooks example’”");
             }
         });
 
